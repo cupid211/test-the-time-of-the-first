@@ -41,6 +41,18 @@ export function CatalogCarousel() {
             dots.forEach((d, i) => {
                 d.className = i === current ? "choosen-dot" : "unchoosen-dot";
             });
+
+            if (current === 0) {
+                prevBtn.style.display = "none";
+            } else {
+                prevBtn.style.display = "flex";
+            }
+
+            if (current === slides.length - 1) {
+                nextBtn.style.display = "none";
+            } else {
+                nextBtn.style.display = "flex";
+            }
         }
 
         dots.forEach((dot, i) => {
