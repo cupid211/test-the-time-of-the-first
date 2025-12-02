@@ -14,6 +14,9 @@ const checkbox = Array.from(menuWrapper.querySelectorAll('input[type="checkbox"]
 let mobileListenersAdded = false;
 let desktopListenersAdded = false;
 
+let desktopMouseEnter, desktopMouseLeave;
+let desktopMenuChange;
+
 export function Menu() {
     const mediaQuery = window.matchMedia("(max-width: 1200px)");
 
@@ -70,6 +73,7 @@ function resetMobileStyles() {
     document.body.style.overflow = '';
     headerNav.style.overflowY = '';
     headerDiv.style.backgroundColor = '';
+
 }
 
 
@@ -79,23 +83,26 @@ function resetMobileStyles() {
 let timeout;
 function initDesktop() {
     if (!desktopListenersAdded) {
-        menuWrapper.addEventListener("mouseenter", () => {
+        desktopMouseEnter = () => {
             clearTimeout(timeout);
             menu.checked = true;
             headerNav.style.backgroundColor = '#1F1F1F';
-        });
+        };
 
-        menuWrapper.addEventListener("mouseleave", () => {
+        desktopMouseLeave = () => {
             timeout = setTimeout(() => {
-                headerNav.style.backgroundColor = '';
                 menu.checked = false;
+                headerNav.style.backgroundColor = '';
             }, 700);
-        });
+        };
 
-        menu.addEventListener('change', () => {
+        desktopMenuChange = () => {
             headerNav.style.backgroundColor = menu.checked ? '#1F1F1F' : '';
-        });
+        };
 
+        menuWrapper.addEventListener("mouseenter", desktopMouseEnter);
+        menuWrapper.addEventListener("mouseleave", desktopMouseLeave);
+        menu.addEventListener("change", desktopMenuChange);
         desktopListenersAdded = true;
     }
 
@@ -112,4 +119,10 @@ function resetDesktopStyles() {
     checkbox.forEach(element => {
         element.checked = false
     });
+    if (desktopListenersAdded) {
+        menuWrapper.removeEventListener("mouseenter", desktopMouseEnter);
+        menuWrapper.removeEventListener("mouseleave", desktopMouseLeave);
+        menu.removeEventListener("change", desktopMenuChange);
+        desktopListenersAdded = false;
+    }
 }
