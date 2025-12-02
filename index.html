@@ -11,11 +11,14 @@
 
 <body>
     <header>
+        <input type="checkbox" name="" id="mobile-menu">
         <div id="header-div" class="y-center">
+
             <div id="logo" class="y-center">
                 <img src="./img/logo2.png" alt="Логотип KPI Studios">
                 <span>Студия дизайна и ремонта KPI Studios</span>
             </div>
+            <label for="mobile-menu" id="btn-mobile-menu"></label>
             <div id="header-info" class="y-center">
                 <address id="header-time" class="header-info-one y-center">
                     <img src="./img/phone.png" alt="Телефон">
@@ -33,6 +36,7 @@
                     </p>
                 </address>
                 <div id="header-messenger" class="y-center">
+                    <button id="get-call">Заказать звонок</button>
                     <span>Задайте вопрос, онлайн</span>
                     <div class="y-center">
                         <a href=""><img src="./img/telegram.png" alt="Telegram"></a>
@@ -43,10 +47,16 @@
         </div>
 
         <nav id="header-nav" class="y-center">
+            <h5>Меню</h5>
             <div id="menu-wrapper">
                 <input type="checkbox" name="" id="menu" hidden>
-                <label for="menu" class="y-center">Наши услуги <img src="./img/expand-down.png" alt=""></label>
+                <label for="menu" class="y-center">
+                    <span><img src="./img/nav-menu.png" alt="">Наши услуги </span>
+                    <img src="./img/expand-down.png" alt="">
+                </label>
                 <div id="big-menu">
+                    <button id="btn-go-back"><img src="./img/go-back.png" alt="">Назад</button>
+                    <h5>Наши услуги: </h5>
                     <div>
                         <input type="checkbox" name="" id="big-menu-design" hidden>
                         <label for="big-menu-design" class="y-center">Дизайн интерьера <img src="./img/expand-down.png"
@@ -74,16 +84,32 @@
                 </div>
             </div>
 
-            <a href="">Реализованные проекты</a>
-            <a href="">О компании</a>
-            <a href="">Полезные статьи</a>
-            <a href="">Контакты</a>
-            <div id="lang" class="y-center">
-                <button class="notactive-lang">EN</button>
-                <hr>
-                <button class="active-lang">RU</button>
-                <hr>
-                <button class="notactive-lang">GE</button>
+            <a href="">
+                <span><img src="./img/nav-calendar.png" alt="">Реализованные проекты</span>
+                <img src="./img/expand-right.png" alt="">
+            </a>
+            <a href="">
+                <span><img src="./img/nav-bookmark.png" alt="">О компании</span>
+                <img src="./img/expand-right.png" alt="">
+            </a>
+            <a href="">
+                <span><img src="./img/nav-info.png" alt="">Полезные статьи</span>
+                <img src="./img/expand-right.png" alt="">
+            </a>
+            <a href="">
+                <span><img src="./img/nav-mail.png" alt="">Контакты</span>
+                <img src="./img/expand-right.png" alt="">
+            </a>
+            <div id="lang">
+                <h6>Язык сайта:</h6>
+                <div class="y-center">
+                    <button class="notactive-lang">EN</button>
+                    <hr>
+                    <button class="active-lang">RU</button>
+                    <hr>
+                    <button class="notactive-lang">GE</button>
+                </div>
+
             </div>
         </nav>
     </header>
@@ -129,11 +155,8 @@
             <div id="catalog-items">
                 <div class="catalog-one-item">
                     <div class="catalog-one-img">
-                        <button class="close-images">
-                            <img src="./img/close.png" alt="">
-                        </button>
                         <button class="previous" type="button"><img src="./img/arrow-left.png" alt=""></button>
-                        <div id="catalog-first-item" class="catalog-one-item-main-img"></div>
+                        <div class="catalog-one-item-main-img"></div>
                         <button type="button" class="next"><img src="./img/arrow-right.png" alt=""></button>
                         <div class="dots y-center">
                         </div>
@@ -164,11 +187,8 @@
                 </div>
                 <div class="catalog-one-item">
                     <div class="catalog-one-img">
-                        <button class="close-images">
-                            <img src="./img/close.png" alt="">
-                        </button>
                         <button type="button" class="previous"><img src="./img/arrow-left.png" alt=""></button>
-                        <div id="catalog-first-item" class="catalog-one-item-main-img"></div>
+                        <div class="catalog-one-item-main-img"></div>
                         <button type="button" class="next"><img src="./img/arrow-right.png" alt=""></button>
                         <div class="dots y-center">
                         </div>
@@ -199,11 +219,8 @@
                 </div>
                 <div class="catalog-one-item">
                     <div class="catalog-one-img">
-                        <button class="close-images">
-                            <img src="./img/close.png" alt="">
-                        </button>
                         <button type="button" class="previous"><img src="./img/arrow-left.png" alt=""></button>
-                        <div id="catalog-first-item" class="catalog-one-item-main-img"></div>
+                        <div class="catalog-one-item-main-img"></div>
                         <button type="button" class="next"><img src="./img/arrow-right.png" alt=""></button>
                         <div class="dots y-center">
 
@@ -235,9 +252,6 @@
                 </div>
                 <div class="catalog-one-item">
                     <div class="catalog-one-img">
-                        <button class="close-images">
-                            <img src="./img/close.png" alt="">
-                        </button>
                         <button type="button" class="previous"><img src="./img/arrow-left.png" alt=""></button>
                         <div class="catalog-one-item-main-img">
 
@@ -272,10 +286,17 @@
                     </div>
                 </div>
             </div>
-            <a href="" id="watch-portfolio" class="y-center">Смотреть полное портфолио <img
-                    src="./img/arrow.png" alt=""></a>
+            <a href="" id="watch-portfolio" class="y-center">Смотреть полное портфолио <img src="./img/arrow.png"
+                    alt=""></a>
         </section>
     </main>
+    <footer>
+        <div class="y-center"><a href="" class="y-center"><img src="./img/footer-phone.png" alt="">Позвонить</a></div>
+        <div class="y-center"><a href="" class="y-center"><img src="./img/footer-telegram.png" alt="">Написать
+                Telegram</a></div>
+        <div class="y-center"><a href="" class="y-center"><img src="./img/footer-whatsapp.png" alt="">Написать
+                WhatsApp</a></div>
+    </footer>
     <script type="module" src="./js/index.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
-import { MenuStylization } from "./menu.js";
+import { Menu } from "./menu.js";
 import { CatalogCarousel } from "./catalog.js";
 
-MenuStylization();
+Menu();
 CatalogCarousel();
