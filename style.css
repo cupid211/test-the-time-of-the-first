@@ -7,6 +7,10 @@
     font-family: "EuclidFlex-Regular";
     src: url("./fonts/EuclidFlex-Regular.ttf");
 }
+@font-face {
+    font-family: "EuclidFlex-Medium";
+    src: url("./fonts/EuclidFlex-Medium.ttf");
+}
 
 @font-face {
     font-family: "EuclidFlex-Bold";
@@ -336,23 +340,41 @@ h2>span {
 }
 
 /*Сarousel*/
-#catalog-first-item {
-    background-image: url("./img/projects/first/first-1.png");
-}
-
-.catalog-one-img{
+.catalog-one-img {
     position: relative;
+    overflow: hidden;
 }
 
 .catalog-one-item-main-img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 400px;
     width: 100%;
 }
 
-.catalog-one-item button {
+.catalog-one-item-main-img>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease
+}
+
+.img-prev {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.img-main {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.img-next {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+.catalog-one-item .previous,  .catalog-one-item .next{
     width: 44px;
     height: 44px;
     display: flex;
@@ -363,14 +385,68 @@ h2>span {
     position: absolute;
     z-index: 3;
 }
-.catalog-one-item button:first-child{
+
+.close-images{
+    display: none;
+}
+
+.catalog-one-item .previous {
     top: 50%;
     left: 40px;
 }
-.catalog-one-item button:nth-child(3)
-{
+
+.catalog-one-item .next {
     top: 50%;
     right: 40px;
+}
+
+.dots {
+    width: 100%;
+    position: absolute;
+    bottom: 36px;
+    justify-content: center;
+    gap: 11px;
+}
+
+.dots>div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.choosen-dot{
+    background-color: #ffffff;
+}
+.unchoosen-dot{
+    background-color: #B99573;
+}
+
+.all-images{
+    margin-top: 16px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    height: 94px;
+    gap: 16px;
+
+}
+.one-item-images{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.last-item-img>a{
+    color: white;
+    font-size: 15px;
+    font-family: "EuclidFlex-SemiBold";
+    line-height:140%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%; height: 100%;
+    background-color: rgba(32, 32, 32, 0.6);
 }
 
 /*-------*/
@@ -383,6 +459,7 @@ h3 {
     display: flex;
     gap: 22px;
     flex-wrap: wrap;
+    font-family: "EuclidFlex-Medium";
 }
 
 .item-info>div {
@@ -393,7 +470,7 @@ h3 {
     color: #ADADAD;
 }
 
-#watch-portfolio{
+#watch-portfolio {
     font-family: "EuclidFlex-SemiBold";
     background-color: white;
     width: 100%;
