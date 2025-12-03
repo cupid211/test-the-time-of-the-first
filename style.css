@@ -1070,9 +1070,13 @@ footer a {
         padding: 20px 30px;
     }
 
-    
+
 
     #big-menu {
         width: 85vw;
+    }
+
+    footer a {
+        font-size: 10px;
     }
 }
